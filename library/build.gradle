@@ -1,22 +1,16 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
-    }
-}
-apply plugin: 'android-library'
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+    provided 'com.nineoldandroids:library:2.4.0'
+    compile 'com.android.support:support-annotations:24.2.1'
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.3"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    defaultConfig {
+        minSdkVersion 9
+    }
 }
